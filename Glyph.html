@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcPy Lab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!----  <link rel="stylesheet" href="css/style.css"> -->
+  <!----  <script src="js/script.js"></script>-->
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Page Heading -->
+    <h1 class="my-4">Glyph Lab</h1>
+    <p> The lab uses data sources such as Natural Earth, World Happiness Report 2018, and Climate Weather Surface of
+      Brazil.
+      The lab objectives were to use the ArcGIS Charts to renderer to visualize
+      the world happiness data parts-of-whole and multivariate data, perform basic data matching of geographic
+      data fields, use Python to read GIS attribute tables, use proportional or graduated symbol maps and multiple
+      layers
+      to encode multiple attributes.
+
+    <div class="container">
+      <h3>Figure 1: Maps of happiness measures</h3>
+      <a href="#">
+        <center><img class="img-fluid rounded mb-3 mb-md-0" src="/figures/glyph/Fin/chart.png" alt="" width="600"
+            height="550"><img class="img-fluid rounded mb-3 mb-md-0" src="/figures/glyph/Fin/PieChart1.png" alt=""
+            width="600" height="500"></center>
+
+      </a>
+      <p> <strong>Figure 1</strong> illustrates maps of Europe which display bar and pie charts representing the factors
+        influencing happiness in each country. These factors were normalized based on the population of each respective
+        country. The variable of social support, defined as the national average of responses (o or 1) to the question
+        "If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them,
+        or not?" was found to be the highest influencing factor on happiness for most countries. GDP and healthy life
+        followed as the next significant factors. In contrast, freedom, generosity, and the perspective of corruption
+        were all similarly ranked at a comparable level, as observed across most countries.
+
+
+    </div>
+
+    <hr>
+
+
+    <div class="container">
+      <div class="container">
+        <h3>Figure 2: A proportional symbol map of Denver Zoo trees</h3>
+        <a href="#">
+          <center><img class="img-fluid rounded mb-3 mb-md-0" src="/figures/glyph/Fin/Denverzoo.png" alt="" width="700"
+              height="400">></center>
+        </a>
+        <p><strong>Figure 2</strong> displays a proportional symbol map of the Denver Zoo trees as a percentage of the
+          total
+          number of trees. The symbol used to represent the trees is color-coded in green. The map is centered on the
+          location of the
+          Denver Zoo, and a smaller map is provided to indicate the location of the zoo in the broader context of the
+          US.
+          The map provides a visual representation and density of trees within the zoo, allowing for easy comparison
+          between
+          different areas. </p>
+      </div>
+
+      <hr>
+
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <h3>Figure 3: Central West Map</h3>
+        <a href="#">
+          <center><img class="img-fluid rounded mb-3 mb-md-0" src="/figures/glyph/Fin/SouthAmerica.png" alt=""
+              width="700" height="400">></center>
+        </a>
+        <p><strong>Figure 3</strong> portrays the geographic distribution of relative humidity, maximum
+          temperature, and atmospheric pressure in Brazil. The circle symbols on the map represent the relative
+          humidity levels, where smaller circles denote lower relative humidity. It is noteworthy that all the locations
+          included in the map have moderate relative humidity, and no specific area is more humid than the others. The
+          colors on the map indicate the maximum temperature values, with most areas displaying maximum temperatures
+          randing from 19 to 31 degress Celsius. Moreover, the figure highlights the location with the highest
+          atmospheric pressure,
+          represented by a blue-cyan color. By providing information about multiple climatic variables across Brazil,
+          this
+          figure can aid in understanding of the local weather patterns. </p>
+      </div>
+
+      <hr>
+
+    </div>
+
+    <div class="container">
+      <div class="container">
+        <p><strong>References:</strong>
+          <br>
+          Climate Weather Surface of Brazil - Hourly. (2023, January 29). Kaggle.
+          https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region?resource=download
+          <br>
+          <br>
+          Helliwell, J. F. (2018, March 14). World Happiness Report 2018. The World Happiness Report.
+          https://worldhappiness.report/ed/2018/
+          <br>
+          <br>
+          Natural Earth  » 1:110m Cultural Vectors - Free vector and raster map data at 1:10m, 1:50m, and 1:110m scales.
+          (n.d.). https://www.naturalearthdata.com/downloads/110m-cultural-vectors/
+
+        </p>
+      </div>
+      <hr>
+    </div>
+    <br>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
