@@ -1,0 +1,216 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RawGraphs Visualizations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Page Heading -->
+        <h1 class="my-4">Improving land surface phenology retrievals for arid and semi-arid ecosystems
+        </h1>
+        <p>
+            MCD12Q2 represents a significant data product sourced from the Terra and Aqua combined Moderate Resolution
+            Imaging Spectroradiometer (MODIS). It has been developed to offer a global depiction of land surface
+            phenology metrics
+            at yearly intervals. The most recent iteration, MCD12Q2 Version 6.1, presents data from 2001 to 2021. The
+            data
+            product is developed from the processing of time-series comprising the two-band Enhanced Vegetation Index
+            (EVI2),
+            which is derived from MODIS Nadir Bidirectional Reflectance Distribution Function-Adjusted Reflectance
+            (NBAR).
+            It has been designed to identify vegetation phenology metrics at 500-meter spatial resolution, including up
+            to two
+            observed growing cycles per year.
+
+            <br>
+            <br>
+
+            Despite its global coverage, the MCD12Q2 product has certain limitations, as it does provide sufficient
+            information
+            for dryland ecosystems. Specifically, MCD12Q2 was only available for two years out of an eight-year
+            observation period
+            for a particular site where ground measurements were available. Through an analysis of ground measurements
+            taken from
+            the same location, it was clear that vegetation and photosynthesis were taking place at the same site where
+            MCD12Q2
+            failed to produce any data.
+            <br>
+            <br>
+
+            This failure to produce data was not attributable to the lack of vegetation. Rather, MCD12Q2 employs a
+            conservative approach
+            in measuring phenological metrics, whereby a threshold of 0.1 is set for the seasonal amplitude (i.e., the
+            difference between EVI max
+            and EVI min values). Consequently, when the EVI's amplitude falls below this threshold, MCD12Q2 generates no
+            data
+            to avoid capturing random noise. Unfortunately, this approach results in a lack of data from regions with
+            low
+            vegetation
+            index amplitude, such as drylands.
+
+            <br>
+
+        <p><strong>Research Question</strong> Can the detection of vegetation phenology in arid regions be improved by
+            customizing
+            the current global threshold of 0.1 to a more regionally appropriate value?
+        </p>
+
+        <div class="container">
+            <center>
+                <h3>Figure 1:Background</h3>
+            </center>
+            <a href="#">
+                <center><img class="img-fluid rounded mb-3 mb-md-0"
+                        src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/background.png"
+                        alt="" width="500" height="500"></center>
+            </a>
+            <p><strong>Figure 1</strong> depicts the phenometrics of MCD12Q2 for an assumed vegetation cycle. The
+                points
+                on the graph signify the timing information or dates at which the EVI2 acheived specific fractions
+                of the cycle's
+                total amplitude.
+            </p>
+            <hr>
+        </div>
+
+        <p>The present study is focused on six arid regions located within the United States, carefully selected
+            due to the availability of ground-based measurements of photosynthesis. The primary data sources
+            employed in this project are the MODIS MYD13A1 product, which provide EVI metrics, and flux measurements
+            for photosynthesis. These data sources will be used for the purpose of validating the study's findings.
+
+        </p>
+        <br>
+        <div class="container">
+            <center>
+                <h3>Figure 2: Study Area</h3>
+            </center>
+            <a href="#">
+                <center><img class="img-fluid rounded mb-3 mb-md-0"
+                        src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/StudyArea.png"
+                        alt="" width="900" height="900"></center>
+            </a>
+            <p> <strong>Figure 2</strong> shows a map of the study area for the project, which includes six drylands
+                located in Arizona and California within the United States. The study locations are identified by pink
+                pins
+                on the top of a land cover land use base map.</p>
+        </div>
+        <hr>
+        <p> In this study, the MCD12Q2 approach is being largely followed for data preprocessing, which includes the
+            elimination of errors and the application of a penalizing cubic smoothing spline to the time series.
+            phenometrics are being defined in a similar way as MCD12Q2. However, there are three notable differences in
+            the approach. Two of these differences are minor, but the most significant difference is the application of
+            pixel-wise seasonal amplitude restrictions to capture a wider range of growing seasons with varying
+            amplitudes. This approach differs from MCD12Q2's use of the same amplitude restriction for all pixels. These
+            differences are outlined in the table and will be crucial in obtaining accurate results for this study.
+
+
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="container">
+            <center>
+                <h3>Figure 3: New approach vs. old approach</h3>
+            </center>
+            <a href="#">
+                <center><img class="img-fluid rounded mb-3 mb-md-0"
+                        src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/table.png"
+                        alt="" width="900" height="900"></center>
+            </a>
+            <p>
+                <strong>Figure 3</strong> shows differences between the new approach and MCD12Q2 in defining
+                phenometircs.
+            </p>
+        </div>
+        <hr>
+        <p>The results of the preliminary analysis for phenometrics using a new regional pixel approach for the
+            year 2007, where MCD12Q2 provided no data, are presented in this section. By implementing this novel
+            approach, it was possible to determine the timing of the seven phenometrics (Figure 4). This demonstrates
+            the effectiveness of the regional pixel approach in identifying phenological metrics in areas where
+            traditional approaches may not provide sufficient data. Further research is needed to validate these results
+            and extent the approach to other regions and time periods.
+
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="container">
+            <center>
+                <h3>Figure 4: Results</h3>
+            </center>
+            <a href="#">
+                <center><img class="img-fluid rounded mb-3 mb-md-0"
+                        src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/result.png"
+                        alt="" width="700" height="700"></center>
+            </a>
+            <p><strong>Figure 4</strong> shows the results of anlaysis using a novel regional pixel approach for the
+                seven phenometrics (Greenup, Mid-greenup, maturity, peak, senescence, mid-greendown, and dormancy)
+                in the year 2007, where MCD12Q2 data was unavailable. </p>
+        </div>
+        <hr>
+        <p>The next steps in this study involve verifying the accuracy of the phenometrics dates obtained through the
+            new regional pixel approach. To achieve this, a comparison will be made between the dates retrieved and
+            those obtained from flux sites. Despite this, initial observations suggest that the EVI values obtained
+            through the new approach visually correspond well with those obtained from the flux sites, as demonstrated
+            by the figure presented (Figure 5). Once the validation process is complete, the analysis will be extended
+            to include drylands across the world, including regions where flux sites are not available. This expansion
+            of the study will provide a more comprehensive understanding of phenometrics and their relationship with
+            environmental factors in drylands globally.
+
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="container">
+            <center>
+                <h3>Figure 5: Denmark Roads Map</h3>
+            </center>
+            <a href="#">
+                <center><img class="img-fluid rounded mb-3 mb-md-0"
+                        src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/verification.png"
+                        alt="" width="500" height="500">
+                </center>
+            </a>
+            <p><strong>Figure 5</strong> shows Gross primary productivity values of obtained from a flux site. </p>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container">
+        <br>
+        <center>
+            <h3>Figure 6: Final Research Poster</h3>
+        </center>
+        <a href="#">
+            <center><img class="img-fluid rounded mb-3 mb-md-0"
+                    src="https://graceeunhyechoi.github.io/GIS715_portfolio_Choi.github.io/figures/research/FinalPosterEdited.png"
+                    alt="">
+            </center>
+        </a>
+        </p>
+        <hr>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
